@@ -5,6 +5,7 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import Background from '../../components/Background';
 
 import { updateProfileRequest } from '../../redux/modules/user/actions';
+import { signOut } from '../../redux/modules/auth/actions';
 
 import {
    Container,
@@ -13,6 +14,7 @@ import {
    FormInput,
    SubmitButton,
    Separator,
+   LogoutButton,
 } from './styles';
 
 export default function Profile() {
@@ -46,6 +48,10 @@ export default function Profile() {
             confirmPassword,
          })
       );
+   }
+
+   function handleLogout() {
+      dispatch(signOut());
    }
 
    return (
@@ -116,6 +122,8 @@ export default function Profile() {
                <SubmitButton onPress={handleSubmit}>
                   Atualizar Perfil
                </SubmitButton>
+
+               <LogoutButton onPress={handleLogout}>Sair</LogoutButton>
             </Form>
          </Container>
       </Background>
