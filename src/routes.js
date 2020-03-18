@@ -64,6 +64,7 @@ export default (signedIn = false) =>
                },
                {
                   // configurações das tabs
+                  resetOnBlur: true, // toda vez q sair de uma rota é resetado..
                   tabBarOptions: {
                      keyboardHidesTabBar: true, // quando o teclado abrir vai passar por cima do tabbar
                      activeTintColor: '#fff',
